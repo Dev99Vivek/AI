@@ -1,7 +1,8 @@
 import "./Main.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { CiSomeIcon } from 'react-icons/ci';
+// import { CiMicrophoneOn } from "react-icons/ci";
+
 
 const Main = () => {
   const { input, setInput, onSent, messages, loading } = useContext(Context);
@@ -60,12 +61,12 @@ const Main = () => {
             className="search-input"
             onKeyDown={handleKeyPress}
           />
-          <button
+          {/* <button
             onClick={startListening}
             className="mic-button button-animation"
           >
             <CiMicrophoneOn size={30} />
-          </button>
+          </button> */}
 
           <a
             href="#"
