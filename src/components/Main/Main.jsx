@@ -1,7 +1,7 @@
 import "./Main.css";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
-import { CiMicrophoneOn } from "react-icons/ci";
+import { CiSomeIcon } from 'react-icons/ci';
 
 const Main = () => {
   const { input, setInput, onSent, messages, loading } = useContext(Context);
