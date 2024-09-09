@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap');
+
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+    padding: 25px 15px;
+    transition: width 0.3s ease;
+    width: 80px; /* Collapsed width */
+    border-right: 2px solid #333;
+}
+
+.sidebar.extended {
+    width: 250px; /* Extended width */
+}
+
+.sidebar img {
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .menu {
+    display: block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar .menu:hover {
+    transform: rotate(90deg);
+}
+
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background-color: #292929;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .new-chat:hover {
+    background-color: #3D3D3D;
+}
+
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.sidebar .recent-title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #50E3C2;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .recent-entry:hover {
+    background-color: #3D3D3D;
+}
+
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.sidebar .bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .bottom-item:hover {
+    background-color: #3D3D3D;
+}
+
+.sidebar .bottom-item img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+}

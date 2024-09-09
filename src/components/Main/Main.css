@@ -1,0 +1,319 @@
+/* Base styles */
+body, html {
+  background: #121212;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+  color: #E0E0E0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling if content exceeds the viewport */
+}
+
+/* Header styles */
+.header {
+  background-color: #1F1F1F;
+  text-align: center;
+}
+
+.logo {
+  font-weight: 300;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #50E3C2;
+  margin: 0;
+}
+
+/* Main content area */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Space for the fixed search bar */
+}
+
+/* Chat container */
+.chat-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.chat-message.user .chat-text {
+  background-color: #4A90E2;
+  color: #E0E0E0;
+  margin-left: auto;
+  border-radius: 15px 15px 0 15px;
+  padding: 12px;
+}
+
+.chat-message.bot .chat-text {
+  background-color: #F5A623;
+  color: #1F1F1F;
+  margin-right: auto;
+  border-radius: 15px 15px 15px 0;
+  padding: 12px;
+}
+
+.chat-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.chat-text {
+  max-width: 70%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  margin: 0 auto;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #50E3C2;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Search container */
+.search-container {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: calc(100% - 32px);
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #1F1F1F;
+  border-radius: 8px;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 12px;
+  border: none;
+  background-color: #333;
+  color: #E0E0E0;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  outline: none;
+  border: 1px solid #50E3C2;
+}
+
+.send-button, .mic-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: #1F1F1F;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 1rem; /* Gap between buttons */
+}
+
+/* Animation for buttons */
+.button-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-animation span {
+  position: absolute;
+  display: block;
+  background: linear-gradient(45deg, transparent, #03e9f4);
+}
+
+.button-animation span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim1 1s linear infinite;
+}
+
+.button-animation span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.button-animation span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.button-animation span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim1 {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes btn-anim2 {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+
+@keyframes btn-anim3 {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+
+@keyframes btn-anim4 {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+/* Animated button */
+.animated-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px;
+  color: #E0E0E0;
+  background-color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  overflow: hidden;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 215px;
+}
+
+.animated-button span {
+  position: absolute;
+  display: block;
+  background: linear-gradient(45deg, transparent, #3bff3b);
+}
+
+.animated-button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim1 1s linear infinite;
+}
+
+.animated-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.animated-button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.animated-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .main {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .content {
+    padding-bottom: 80px; /* Increased space for the search bar */
+  }
+
+  .search-container {
+    width: calc(100% - 16px);
+    padding: 8px;
+    flex-direction: row; /* Maintain row layout */
+    align-items: center;
+    bottom: 8px;
+    left: 0;
+  }
+
+  .search-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .send-button,
+  .mic-button {
+    margin-left: 0.5rem; /* Adjusted gap for smaller screens */
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
